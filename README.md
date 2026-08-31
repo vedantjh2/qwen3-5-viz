@@ -13,6 +13,13 @@ python3 -m http.server 3002
 
 Then open `http://localhost:3002/qwen/`.
 
+The hosted visualization is available at:
+
+**https://vedantjh2.github.io/qwen3-5-viz/**
+
+GitHub Pages publishes the static `qwen/` directory directly. It does not install dependencies or
+run Next.js.
+
 The original GPT visualization remains available at `/llm` when running the full Next.js app. See
 [`AGENTS.md`](AGENTS.md) for the Qwen3.5 equations, real-versus-mini dimensions, color semantics, and
 file map.
@@ -42,3 +49,7 @@ yarn dev
 ```
 
 Then open `http://localhost:3002/qwen`.
+
+Next.js is optional for the Qwen visualization. It provides the multi-route application shell and
+keeps the copied `/llm`, `/cpu`, `/codec`, and `/fluid-sim` projects runnable. The standalone Qwen
+app in `qwen/` contains its own HTML, CSS, JavaScript, and deterministic model data.
