@@ -1,0 +1,54 @@
+import { createAluComps } from "./Alu";
+import { ICompBuilderArgs } from "./CompBuilder";
+import { createRegisterComps } from "./Registers";
+import { createRiscvInsDecodeComps } from "./RiscvInsDecode";
+import { createRiscvExtraComps } from "./RiscvExtra";
+import { createMuxComps } from "./Mux";
+import { createSimpleMemoryComps } from "./SimpleMemory";
+import { createBinaryGateComps } from "./BinaryGates";
+import { createAddressingComps } from "./Addressing";
+import { createInputOutputComps } from "./InputOutput";
+import { createLedOutputComps } from "./peripheral/LedOutputSimple";
+import { createRegFileCtrlComps } from "./riscv/RegisterControl";
+import { createCompIoComps } from "./CompPort";
+import { createBitMappingComps } from "./BitMapping";
+import { createBitExpanderComps } from "./BitExpander";
+import { createBitComparitorComps } from "./BitComparitor";
+import { createBinaryGateMultiComps } from "./BinaryGatesMulti";
+import { createMathLogicComps } from "./MathLogic";
+import { CompLibrary } from "../library/CompLibrary";
+
+export function buildCompLibrary() {
+    let compLibrary = new CompLibrary();
+
+    let args: ICompBuilderArgs = { };
+
+    let comps = [
+        ...createRegisterComps(args),
+        ...createAluComps(args),
+        ...createRiscvExtraComps(args),
+        ...createRiscvInsDecodeComps(args),
+        ...createMuxComps(args),
+        ...createSimpleMemoryComps(args),
+        ...createBinaryGateComps(args),
+        ...createAddressingComps(args),
+        ...createInputOutputComps(args),
+        ...createLedOutputComps(args),
+        ...createRegFileCtrlComps(args),
+        ...createCompIoComps(args),
+        ...createBitMappingComps(args),
+        ...createBitExpanderComps(args),
+        ...createBitComparitorComps(args),
+        ...createBinaryGateMultiComps(args),
+        ...createMathLogicComps(args),
+    ];
+
+    for (let comp of comps) {
+        let extraId = 'core/' + comp.defId;
+        comp.altDefIds = [...comp.altDefIds ?? [], comp.defId];
+        comp.defId = extraId;
+        compLibrary.addComp(comp);
+    }
+
+    return compLibrary;
+}

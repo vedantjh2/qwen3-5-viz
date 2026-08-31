@@ -1,0 +1,60 @@
+{
+  "comment0": "This file is used as a registry to build the file that pulls in all the schematics.",
+  "comment1": "Managed by /cpu/api/save-schematic-to-file",
+  "schematics": [
+    {
+      "id": "pcCounter"
+    },
+    {
+      "id": "regFileDemo"
+    },
+    {
+      "id": "riscvBasic"
+    },
+    {
+      "id": "romUsage"
+    },
+    {
+      "id": "insDecodeInternal"
+    },
+    {
+      "id": "riscvBasicAddIns"
+    },
+    {
+      "id": "riscvBasicInsDecodeOnly"
+    },
+    {
+      "id": "aluInternalSimple"
+    },
+    {
+      "id": "adder_RippleAdder"
+    },
+    {
+      "id": "singleBitAdder"
+    },
+    {
+      "id": "mux_2Internal"
+    },
+    {
+      "id": "riscvLoadStoreInternal"
+    },
+    {
+      "id": "shiftLeftInternal"
+    },
+    {
+      "id": "shiftRightInternal"
+    },
+    {
+      "id": "comparitor_4Way"
+    },
+    {
+      "id": "comparitorInternal"
+    },
+    {
+      "id": "addrMapInternal"
+    },
+    {
+      "id": "riscvBasicAlu"
+    }
+  ]
+}

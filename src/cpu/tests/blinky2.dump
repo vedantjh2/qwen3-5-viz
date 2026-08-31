@@ -1,0 +1,20 @@
+
+blinky2.elf:	file format elf32-littleriscv
+
+Disassembly of section .text:
+
+00000000 <_start>:
+       0: 37 04 02 40  	lui	s0, 0x40020
+       4: 93 04 a0 0a  	li	s1, 0xaa
+       8: 23 20 94 00  	sw	s1, 0x0(s0)
+       c: 03 25 04 00  	lw	a0, 0x0(s0)
+      10: 93 04 f0 0f  	li	s1, 0xff
+      14: 13 09 40 01  	li	s2, 0x14
+
+00000018 <loop>:
+      18: a3 21 94 00  	sw	s1, 0x3(s0)
+      1c: 03 25 04 00  	lw	a0, 0x0(s0)
+      20: 13 09 f9 ff  	addi	s2, s2, -0x1
+      24: e3 1a 09 fe  	bnez	s2, 0x18 <loop>
+      28: 13 05 c0 02  	li	a0, 0x2c
+      2c: 73 00 00 00  	ecall

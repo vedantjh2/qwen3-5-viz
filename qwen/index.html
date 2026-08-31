@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="An interactive, cell-traceable walkthrough of one dense Qwen3.5 3:1 DeltaNet/full-attention quartet."
+  >
+  <title>Qwen3.5 Forward Pass Explorer</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="app"></div>
+  <noscript>This visualization requires JavaScript to animate and trace matrix operations.</noscript>
+  <script type="module">
+    import { mountQwenViz } from './app.js';
+    mountQwenViz(document.querySelector('#app'));
+  </script>
+</body>
+</html>
