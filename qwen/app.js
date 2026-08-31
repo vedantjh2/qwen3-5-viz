@@ -912,7 +912,7 @@ function additionalContextParagraphs(step) {
   if (id === 'next-token') {
     return [
       'Greedy decoding selects the largest probability deterministically. Real generation may instead sample, apply temperature, restrict to top-k/top-p candidates, or enforce structured decoding constraints.',
-      'After a token is chosen, it is appended to the sequence and the model runs again using cached recurrent and attention state. The toy choice demonstrates mechanics only, not language quality.',
+      'After a token is chosen, it is appended to the sequence and the model runs again using cached recurrent and attention state. Here the fixed toy "fast" embedding is deliberately aligned with the final hidden row so the example is intuitive, while the decoding mechanics remain unchanged.',
     ];
   }
   return [
@@ -2497,7 +2497,7 @@ function renderPrediction(visual) {
         <small>Append it, then run the model again for the following token.</small>
       </div>
       <p class="toy-warning">
-        The weights on this page are deterministic teaching values, not Qwen checkpoint weights. The arithmetic is real; the language prediction is intentionally not meaningful.
+        The weights on this page are deterministic teaching values, not Qwen checkpoint weights. The tied embedding row for "fast" is intentionally designed to win this example; the arithmetic and decoding path are real.
       </p>
     </div>
   `;

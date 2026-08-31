@@ -79,6 +79,11 @@ checkpoint and does not use pretrained Qwen weights.
 All toy weights are deterministically generated. They exist only to create stable arithmetic for the
 tutorial. Do not describe the toy next-token result as a meaningful model prediction.
 
+Vocabulary row 5 (`fast`) is a fixed teaching constant rather than a seeded row. `fast` is absent
+from the prompt, so this changes neither token embeddings nor any decoder hidden state; it only makes
+the tied LM-head comparison choose the intuitive continuation `A tiny robot learns fast`. Describe
+this as an intentionally designed toy target, not learned language behavior.
+
 The teaching attention therefore uses `4 Q heads : 1 K/V head`, exactly matching the grouping ratio
 of the real model's `16 Q heads : 4 K/V heads`. Each mini head is compressed to one visible
 two-dimensional rotary pair; this keeps the diagrams legible while preserving the head-sharing

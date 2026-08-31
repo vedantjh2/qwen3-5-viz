@@ -639,6 +639,17 @@ function buildModelRun() {
     77,
     0.72,
   );
+  // "fast" is not in the prompt, so this fixed tied-embedding row changes only the toy LM-head result.
+  embeddingTable[VOCABULARY.indexOf('fast')] = [
+    -0.312044,
+    -0.312044,
+    0.312044,
+    -0.312044,
+    0.312044,
+    -0.312044,
+    0.312044,
+    0.312044,
+  ];
   const embedded = TOKEN_IDS.map((tokenId) => [...embeddingTable[tokenId]]);
   const deltaLayers = [];
   let hidden = embedded;

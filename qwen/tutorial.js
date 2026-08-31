@@ -2031,13 +2031,13 @@ function buildTutorial() {
     architectureTarget: 'next-token',
     paragraphs: [
       'Softmax turns the last token row into a probability distribution. Greedy decoding picks the largest value; sampling would draw from the full distribution.',
-      'These deterministic toy weights are not pretrained, so the selected token is arithmetic output rather than a meaningful language prediction.',
+      'The fixed toy embedding row for "fast" is intentionally chosen to make this example read naturally after "A tiny robot learns." It still demonstrates tied-weight arithmetic rather than pretrained language ability.',
     ],
     formula: 'p(next_token) = softmax(Logits[last,:])',
     callouts: [
       ['Selected token', MODEL_RUN.nextToken],
       ['Decoder shown', 'greedy argmax'],
-      ['Semantic quality', 'none (toy weights)'],
+      ['Toy target', 'intentionally "fast"'],
     ],
     visual: {
       kind: 'prediction',
