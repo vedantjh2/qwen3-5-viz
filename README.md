@@ -20,6 +20,22 @@ The hosted visualization is available at:
 GitHub Pages publishes the static `qwen/` directory directly. It does not install dependencies or
 run Next.js.
 
+## Reusable Copilot skill
+
+This repository includes the project skill
+[`model-forward-pass-visualizer`](.github/skills/model-forward-pass-visualizer/SKILL.md). It guides
+Copilot through researching another model, preserving real architecture ratios, building a
+deterministic mini forward pass, generating the same cell-traceable UI and long-form tutorial, and
+validating or publishing the result.
+
+From a Copilot CLI session in this repository, invoke it explicitly with:
+
+```text
+Use the /model-forward-pass-visualizer skill to create the same style of visualization for <model>.
+```
+
+To reuse it in another repository, copy the skill directory or add it with `copilot skill add`.
+
 The original GPT visualization remains available at `/llm` when running the full Next.js app. See
 [`AGENTS.md`](AGENTS.md) for the Qwen3.5 equations, real-versus-mini dimensions, color semantics, and
 file map.

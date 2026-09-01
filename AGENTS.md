@@ -334,6 +334,7 @@ computed cell if every source index mapping is accurate.
 | `qwen/app.js` | Interaction state and DOM/SVG-style renderer |
 | `qwen/styles.css` | Layout, arrows, animations, matrices, and color semantics |
 | `qwen/index.html` | Dependency-free standalone entry point |
+| `.github/skills/model-forward-pass-visualizer/` | Reusable Copilot skill for adapting the visualization to other architectures |
 | `llm-viz/` | Original implementation reference only |
 
 ## Development
